@@ -19,8 +19,4 @@ public class ErrorResponseDTO {
     private final int statusAPI;
 
     private final String description;
-
-    public ErrorResponseDTO fromRunTimeException(RuntimeException rt, Integer code) {
-        return ErrorResponseDTO.builder().description(rt.getMessage()).code(code).build();
-    }
 }
