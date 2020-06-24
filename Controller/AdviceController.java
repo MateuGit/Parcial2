@@ -13,6 +13,6 @@ public class AdviceController {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ApiErrorException.class)
     public ErrorResponseDTO handleApiErrorException(ApiErrorException ex) {
-        return new ErrorResponseDTO(1, ex.getApiCode(), ex.getMessage());
+        return ErrorResponseDTO.fromRunTimeException(ex,1);
     }
 }
